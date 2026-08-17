@@ -1,0 +1,14 @@
+{
+  "n_false_positives": 17,
+  "n_false_negatives": 13,
+  "n_true_positives": 58,
+  "n_true_negatives": 42471,
+  "high_confidence_errors": 23,
+  "low_confidence_predictions": 2,
+  "fn_mean_probability": 0.004093775324933473,
+  "fp_mean_probability": 0.35472573865862456,
+  "fn_mean_amount": 214.13384615384618,
+  "fp_mean_amount": 146.83647058823527,
+  "tp_mean_amount": 111.32637931034483,
+  "interpretation": "Missed frauds (FN=13) have mean amount 214.13 and mean predicted probability 0.004. These are typically frauds whose PCA signature is closer to the legitimate bulk. False alerts (FP=17) have mean amount 146.84 and mean probability 0.355. In production these would enter a human review queue rather than an auto-block."
+}

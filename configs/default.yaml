@@ -1,0 +1,12 @@
+random_seed: 42
+train_size: 0.70
+val_size: 0.15
+test_size: 0.15
+primary_metric: pr_auc
+resample_strategy: 0.20
+fraud_miss_cost: 500
+false_alert_cost: 5
+min_recall_constraint: 0.80
+optuna_trials: 12
+cv_folds: 3
+n_estimators: 200

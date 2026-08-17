@@ -1,0 +1,209 @@
+{
+  "best_model": "xgboost",
+  "threshold": 0.05,
+  "threshold_reason": "Selected to minimize expected cost among thresholds with recall >= 0.80. Missed fraud (FN) is priced at a much higher cost than a false alert (FP), matching a banking review workflow.",
+  "validation_metrics": {
+    "accuracy": 0.9994360769754929,
+    "precision": 0.8405797101449275,
+    "recall": 0.8169014084507042,
+    "f1": 0.8285714285714286,
+    "macro_f1": 0.9141445012658739,
+    "specificity": 0.9997411033703634,
+    "false_positive_rate": 0.00025889662963660327,
+    "false_negative_rate": 0.18309859154929578,
+    "support_fraud": 71.0,
+    "support_legit": 42488.0,
+    "tp": 58.0,
+    "fp": 11.0,
+    "tn": 42477.0,
+    "fn": 13.0,
+    "roc_auc": 0.9728460198206752,
+    "pr_auc": 0.8557571711057751,
+    "brier": 0.00036610938541499407
+  },
+  "test_metrics": {
+    "accuracy": 0.9992950962193661,
+    "precision": 0.7733333333333333,
+    "recall": 0.8169014084507042,
+    "f1": 0.7945205479452054,
+    "macro_f1": 0.897083745233724,
+    "specificity": 0.9995998870269253,
+    "false_positive_rate": 0.00040011297307475054,
+    "false_negative_rate": 0.18309859154929578,
+    "support_fraud": 71.0,
+    "support_legit": 42488.0,
+    "tp": 58.0,
+    "fp": 17.0,
+    "tn": 42471.0,
+    "fn": 13.0,
+    "roc_auc": 0.9735549192348594,
+    "pr_auc": 0.8336093132066774,
+    "brier": 0.0004350247734734293
+  },
+  "cross_validation": {
+    "skipped": false,
+    "metric": "average_precision",
+    "folds": 3,
+    "mean": 0.861154483007585,
+    "std": 0.006422022245643063,
+    "folds_detail": [
+      0.8645228304999986,
+      0.8521659112052025,
+      0.8667747073175541
+    ]
+  },
+  "imbalance_comparison": [
+    {
+      "strategy": "class_weight",
+      "pr_auc": 0.6355099850259087,
+      "recall": 0.6338028169014085,
+      "precision": 0.7894736842105263,
+      "f1": 0.703125,
+      "seconds": 0.9866389168892056,
+      "applied": false,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "random_under",
+      "pr_auc": 0.7139106703172103,
+      "recall": 0.8732394366197183,
+      "precision": 0.23048327137546468,
+      "f1": 0.36470588235294116,
+      "seconds": 0.37160283303819597,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 1655,
+        "n_fraud": 331
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "random_over",
+      "pr_auc": 0.8280420440657157,
+      "recall": 0.7746478873239436,
+      "precision": 0.859375,
+      "f1": 0.8148148148148148,
+      "seconds": 1.1670819169376045,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 39655
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "smote",
+      "pr_auc": 0.7907879985894577,
+      "recall": 0.8028169014084507,
+      "precision": 0.6951219512195121,
+      "f1": 0.7450980392156863,
+      "seconds": 1.619971042033285,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 39655
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "smote_tomek",
+      "pr_auc": 0.8332788750736945,
+      "recall": 0.8309859154929577,
+      "precision": 0.6020408163265306,
+      "f1": 0.6982248520710059,
+      "seconds": 1.5713902090210468,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 40000,
+        "n_fraud": 8000
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    }
+  ],
+  "hpo": {
+    "skipped": false,
+    "model": "xgboost",
+    "n_trials": 12,
+    "best_params": {
+      "n_estimators": 241,
+      "max_depth": 7,
+      "learning_rate": 0.14387993315084968,
+      "subsample": 0.6300302011296666,
+      "colsample_bytree": 0.706405231795276,
+      "min_child_weight": 1
+    },
+    "cv_pr_auc": 0.861154483007585,
+    "best_pr_auc": 0.8557571711057751,
+    "improved": true,
+    "selection_protocol": "Optuna maximizes StratifiedKFold PR-AUC on training data only; validation PR-AUC is reported after refit."
+  },
+  "calibration": {
+    "raw_brier": 0.00036610939423553646,
+    "calibrated_brier": 0.00042535467018282885,
+    "used_calibration": false
+  },
+  "error_analysis": {
+    "n_false_positives": 17,
+    "n_false_negatives": 13,
+    "n_true_positives": 58,
+    "n_true_negatives": 42471,
+    "high_confidence_errors": 23,
+    "low_confidence_predictions": 2,
+    "fn_mean_probability": 0.004093775324933473,
+    "fp_mean_probability": 0.35472573865862456,
+    "fn_mean_amount": 214.13384615384618,
+    "fp_mean_amount": 146.83647058823527,
+    "tp_mean_amount": 111.32637931034483,
+    "interpretation": "Missed frauds (FN=13) have mean amount 214.13 and mean predicted probability 0.004. These are typically frauds whose PCA signature is closer to the legitimate bulk. False alerts (FP=17) have mean amount 146.84 and mean probability 0.355. In production these would enter a human review queue rather than an auto-block."
+  },
+  "shap_artifacts": {
+    "bar": "/Users/mahendrareddy/Downloads/creditcard_fraud/outputs/figures/shap_bar.png",
+    "beeswarm": "/Users/mahendrareddy/Downloads/creditcard_fraud/outputs/figures/shap_beeswarm.png"
+  },
+  "why_pr_auc": "Accuracy is dominated by the 99.83% legitimate majority: a model that never predicts fraud is ~99.8% accurate and useless. ROC-AUC can look optimistic because true negatives are easy. PR-AUC focuses on the rare positive class (precision vs recall) and is the primary ranking metric.",
+  "leakage_controls": {
+    "split_before_scaling": true,
+    "scaler_fit_on_train_only": true,
+    "resampling_train_only": true,
+    "threshold_tuned_on_validation_only": true,
+    "test_untouched_until_final_eval": true,
+    "no_smote_before_split": true
+  },
+  "split_sizes": {
+    "train": 198608,
+    "validation": 42559,
+    "test": 42559,
+    "train_fraud": 331,
+    "val_fraud": 71,
+    "test_fraud": 71
+  },
+  "cost_framework": {
+    "fraud_miss_cost": 500.0,
+    "false_alert_cost": 5.0,
+    "validation_expected_cost": 6555.0
+  }
+}

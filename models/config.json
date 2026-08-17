@@ -1,0 +1,16 @@
+{
+  "runtime": {
+    "fast": false,
+    "skip_eda": false,
+    "skip_hpo": false,
+    "skip_shap": false,
+    "skip_autoencoder": false,
+    "optuna_trials": 12,
+    "cv_folds": 3,
+    "n_estimators": 200,
+    "random_seed": 42
+  },
+  "best_model": "xgboost",
+  "pos_weight": 599.02416918429,
+  "n_features": 34
+}

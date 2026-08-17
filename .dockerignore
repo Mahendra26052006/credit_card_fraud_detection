@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv
+.pytest_cache
+
+# Git / IDE
+.git
+.gitignore
+.DS_Store
+
+# Local data (large)
+data/raw/*.csv
+data/processed/*
+mlruns
+catboost_info
+*.log

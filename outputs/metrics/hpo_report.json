@@ -1,0 +1,17 @@
+{
+  "skipped": false,
+  "model": "xgboost",
+  "n_trials": 12,
+  "best_params": {
+    "n_estimators": 241,
+    "max_depth": 7,
+    "learning_rate": 0.14387993315084968,
+    "subsample": 0.6300302011296666,
+    "colsample_bytree": 0.706405231795276,
+    "min_child_weight": 1
+  },
+  "cv_pr_auc": 0.861154483007585,
+  "best_pr_auc": 0.8557571711057751,
+  "improved": true,
+  "selection_protocol": "Optuna maximizes StratifiedKFold PR-AUC on training data only; validation PR-AUC is reported after refit."
+}

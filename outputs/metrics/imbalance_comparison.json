@@ -1,0 +1,94 @@
+{
+  "results": [
+    {
+      "strategy": "class_weight",
+      "pr_auc": 0.6355099850259087,
+      "recall": 0.6338028169014085,
+      "precision": 0.7894736842105263,
+      "f1": 0.703125,
+      "seconds": 0.9866389168892056,
+      "applied": false,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "random_under",
+      "pr_auc": 0.7139106703172103,
+      "recall": 0.8732394366197183,
+      "precision": 0.23048327137546468,
+      "f1": 0.36470588235294116,
+      "seconds": 0.37160283303819597,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 1655,
+        "n_fraud": 331
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "random_over",
+      "pr_auc": 0.8280420440657157,
+      "recall": 0.7746478873239436,
+      "precision": 0.859375,
+      "f1": 0.8148148148148148,
+      "seconds": 1.1670819169376045,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 39655
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "smote",
+      "pr_auc": 0.7907879985894577,
+      "recall": 0.8028169014084507,
+      "precision": 0.6951219512195121,
+      "f1": 0.7450980392156863,
+      "seconds": 1.619971042033285,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 198277,
+        "n_fraud": 39655
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    },
+    {
+      "strategy": "smote_tomek",
+      "pr_auc": 0.8332788750736945,
+      "recall": 0.8309859154929577,
+      "precision": 0.6020408163265306,
+      "f1": 0.6982248520710059,
+      "seconds": 1.5713902090210468,
+      "applied": true,
+      "before": {
+        "n_legit": 198277,
+        "n_fraud": 331
+      },
+      "after": {
+        "n_legit": 40000,
+        "n_fraud": 8000
+      },
+      "note": "Resampling is training-only. Validation and test distributions remain the real-world ~0.17% fraud prior."
+    }
+  ]
+}
